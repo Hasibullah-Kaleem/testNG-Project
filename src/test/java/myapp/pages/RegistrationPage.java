@@ -26,9 +26,15 @@ public class RegistrationPage {
     @FindBy (css = "button[value='Sign Up']")
     public WebElement signUpButton;
 
-    @FindBy (xpath = "//p[contains(text(),'An account is already registered with your email address')]")
+    @FindBy (xpath = "//p[normalize-space()='Register successful, redirecting...']")
+    public WebElement regSuccessMsg;
+
+    @FindBy (xpath = "//p[contains(text(),'An account is already registered with that username. Please choose another.')]")
+    public WebElement regUsernameWarningMsg;
+
+    @FindBy (xpath = "//p[contains(text(),'An account is already registered with your email address. Please log in.')]")
     public WebElement regEmailWarningMsg;
 
     @FindBy (xpath = "//a[normalize-space()='Please log in.']")
-    public WebElement pleaseLogInMsg;
+    public WebElement pleaseLogIn;
 }
