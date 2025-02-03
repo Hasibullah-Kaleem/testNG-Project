@@ -12,6 +12,9 @@ target/
 *.iml
 *.ipr
 
+### Added by me ###
+.idea/uiDesigner.xml
+
 ### Eclipse ###
 .apt_generated
 .classpath
