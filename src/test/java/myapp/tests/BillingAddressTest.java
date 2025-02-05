@@ -12,7 +12,7 @@ public class BillingAddressTest {
    public void test() {
 
 
-      Driver.getDriver().get("https://allovercommerce.com/");/
+      Driver.getDriver().get("https://allovercommerce.com/");
 
 
 
