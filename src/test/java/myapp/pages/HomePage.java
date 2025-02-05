@@ -16,4 +16,10 @@ public class HomePage {
 
     @FindBy (xpath = "//span[normalize-space()='Sign Out']")
     public WebElement signOutOption;
+
+    @FindBy (xpath = "//a[@class='login inline-type']")
+    public WebElement signInOption;
+
+    @FindBy (linkText = "My Account")
+    public WebElement myAccountTab;
 }
