@@ -6,7 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
+
 
 
 public class US_03_BillingAddressPage {
@@ -18,12 +18,13 @@ public class US_03_BillingAddressPage {
 
 
     }
-    @FindBy(xpath = "//a[.//span[text()='Sign In']]")
+
+   @FindBy(xpath = "//a[.//span[text()='Sign In']]")
     public WebElement signInButton;
 
-   // @FindBy(id= "username")
-   @FindBy(xpath = "//*[@id='username']")
-   public WebElement username;
+
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement username;
 
     @FindBy(id= "password")
     public WebElement password;
@@ -37,26 +38,27 @@ public class US_03_BillingAddressPage {
     @FindBy(xpath = "//a[text()='Addresses']")
     public WebElement addressOption;
 
-
-    @FindBy(xpath="//a[contains(text(), 'Edit') or contains(@href, 'edit-address')]")
+    @FindBy(css="a[href*='edit-address']")
     public WebElement editBillingAddressButton;
 
+    // @FindBy(xpath="//a[contains(text(), 'Edit') or contains(@href, 'edit-address')]")
 
-    @FindBy(xpath = "//*[contains(@id, 'billing_first_name')]")
+  @FindBy(xpath ="//*[contains(@id, 'billing_first_name']")
+ //@FindBy(id = "billing_firstName")
     public WebElement billingFirstName;
 
 
     @FindBy(id = "billing_last_name")
     public WebElement billingLastName;
 
-    @FindBy(id="Billing_company")
+    @FindBy (id= "Billing_company")
     public WebElement billingCompany;
 
     @FindBy(xpath = "//select[@id='billing_country']")
     public WebElement billingCountry;
 
-    @FindBy(id = "billing_address_1")
-    public WebElement billingAdress1;
+    @FindBy(id = "billing_streetAddress")
+    public WebElement streetAddress;
 
     @FindBy(id="billing_city")
     public WebElement billingCity;
@@ -84,6 +86,7 @@ public class US_03_BillingAddressPage {
 
 
 }
+
 
 
 

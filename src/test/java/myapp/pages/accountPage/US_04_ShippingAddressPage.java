@@ -22,8 +22,6 @@ public class US_04_ShippingAddressPage {
 
     }
 
-
-
     @FindBy(xpath = "//a[.//span[text()='Sign In']]")
    public WebElement signInButton;
 
