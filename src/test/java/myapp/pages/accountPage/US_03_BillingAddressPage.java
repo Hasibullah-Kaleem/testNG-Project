@@ -41,8 +41,6 @@ public class US_03_BillingAddressPage {
     @FindBy(xpath="//a[contains(text(), 'Edit') or contains(@href, 'edit-address')]")
     public WebElement editBillingAddressButton;
 
-//     @FindBy(id = "billing_first_name")
-//    public WebElement billingFirstName;
 
     @FindBy(xpath = "//*[contains(@id, 'billing_first_name')]")
     public WebElement billingFirstName;
