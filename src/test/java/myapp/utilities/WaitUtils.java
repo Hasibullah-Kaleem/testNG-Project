@@ -68,4 +68,3 @@ public class WaitUtils {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 }
-

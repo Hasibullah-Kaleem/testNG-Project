@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
 import static org.testng.AssertJUnit.*;
 public class BrowserUtils {
     public static void clickWithTimeOut(WebElement element, int timeout) {
@@ -49,20 +48,20 @@ public class BrowserUtils {
     }
     //    RADIO BUTTON
     public void radioClickByIndex(int index){
-        int numOfRadio = myapp.utilities.Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).size();
+        int numOfRadio =Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).size();
         for (int i=0;i<numOfRadio;i++){
-            if (!myapp.utilities.Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).get(index).isSelected()) {
-                myapp.utilities.Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).get(index).click();
+            if (!Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).get(index).isSelected()) {
+                Driver.getDriver().findElements(By.xpath("//input[@type='radio']")).get(index).click();
             }
         }
     }
     //    CHECKBOX BUTTON
     public void checkboxClickByIndex(int index){
-        int numOfRadio = myapp.utilities.Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']")).size();
+        int numOfRadio =Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']")).size();
         try{
             for (int i=0;i<numOfRadio;i++){
-                if (!myapp.utilities.Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']")).get(index).isSelected()) {
-                    myapp.utilities.Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']")).get(index).click();
+                if (!Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']")).get(index).isSelected()) {
+                    Driver.getDriver().findElements(By.xpath("//input[@type='checkbox']")).get(index).click();
                 }
             }
         }catch (Exception e){
@@ -147,7 +146,7 @@ public class BrowserUtils {
      */
     public static void verifyElementDisplayed(By by) {
         try {
-            assertTrue("Element not visible: " + by, myapp.utilities.Driver.getDriver().findElement(by).isDisplayed());
+            assertTrue("Element not visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             org.testng.Assert.fail("Element not found: " + by);
         }
@@ -161,7 +160,7 @@ public class BrowserUtils {
      */
     public static void verifyElementNotDisplayed(By by) {
         try {
-            assertFalse("Element should not be visible: " + by, myapp.utilities.Driver.getDriver().findElement(by).isDisplayed());
+            assertFalse("Element should not be visible: " + by, Driver.getDriver().findElement(by).isDisplayed());
         } catch (NoSuchElementException e) {
             e.printStackTrace();
         }
@@ -205,36 +204,35 @@ public class BrowserUtils {
     }
     //    ALERT
     public void alertAccept() throws InterruptedException {
-        myapp.utilities.Driver.getDriver().switchTo().alert().accept();
+        Driver.getDriver().switchTo().alert().accept();
     }
     public void alertDismiss() throws InterruptedException {
-        myapp.utilities.Driver.getDriver().switchTo().alert().accept();
+        Driver.getDriver().switchTo().alert().accept();
     }
     //    IFRAME
     public static void frameSwitchTo(String xpath){
-        WebElement iframeElement = myapp.utilities.Driver.getDriver().findElement(By.xpath(xpath));
-        myapp.utilities.Driver.getDriver().switchTo().frame(iframeElement);
+        WebElement iframeElement = Driver.getDriver().findElement(By.xpath(xpath));
+        Driver.getDriver().switchTo().frame(iframeElement);
     }
     //    IFRAME
     public static void frameSwitchTo(int index){
-        myapp.utilities.Driver.getDriver().switchTo().frame(index);
+        Driver.getDriver().switchTo().frame(index);
     }
     //    MULTIPLE WINDOW !!!
     public static void windowSwitchTo(String targetTitle) {
-        String origin = myapp.utilities.Driver.getDriver().getWindowHandle();
-        for (String childWindow : myapp.utilities.Driver.getDriver().getWindowHandles()) {
-            myapp.utilities.Driver.getDriver().switchTo().window(childWindow);
-            if (myapp.utilities.Driver.getDriver().getTitle().equals(targetTitle)) {
+        String origin = Driver.getDriver().getWindowHandle();
+        for (String childWindow : Driver.getDriver().getWindowHandles()) {
+            Driver.getDriver().switchTo().window(childWindow);
+            if (Driver.getDriver().getTitle().equals(targetTitle)) {
                 System.out.println("Switched to the window : "+targetTitle);
                 return;
             }
         }
-        myapp.utilities.Driver.getDriver().switchTo().window(origin);
+        Driver.getDriver().switchTo().window(origin);
     }
     //    windowNumber starts at (0)
     public static void windowSwitchTo(int windowIndex){
-        List<String> list = new ArrayList<>(myapp.utilities.Driver.getDriver().getWindowHandles());
-        myapp.utilities.Driver.getDriver().switchTo().window(list.get(windowIndex));
+        List<String> list = new ArrayList<>(Driver.getDriver().getWindowHandles());
+        Driver.getDriver().switchTo().window(list.get(windowIndex));
     }
 }
-

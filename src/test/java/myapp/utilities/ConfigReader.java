@@ -7,11 +7,10 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-    // this class is used to read data from configuration.properties file
-    // Selenium can't read this properties file directly, so we use Java logic => FileInputStream + Properties
-    // We will use static block to make the path of the properties file available before anything
-    // static block => runs before the class => makes the pre-requisites available before the class object is created
 
+    // this class is used to read data from configuration.properties file
+    // Selenium can't read this properties file directly, so we use Java logic
+    // We will use static block to make the path of the properties file available before anything
 
     private static Properties properties;
 
@@ -22,7 +21,6 @@ public class ConfigReader {
         String path = "configuration.properties";
 
         try {
-
             FileInputStream fileInputStream = new FileInputStream(path);
             properties = new Properties();
             properties.load(fileInputStream);
@@ -40,9 +38,6 @@ public class ConfigReader {
         String value = properties.getProperty(key);
         return value;
     }
-
-
-
 
 
 

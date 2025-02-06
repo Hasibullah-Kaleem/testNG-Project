@@ -1,5 +1,4 @@
 package myapp.utilities;
-
 import org.apache.poi.ss.usermodel.*;
 import org.testng.Assert;
 
@@ -50,6 +49,7 @@ public class ExcelUtils {
         }
         return data;
     }
+
     //===============Getting the number of columns in a specific single row=================
     public int columnCount() {
         //getting how many numbers in row 1

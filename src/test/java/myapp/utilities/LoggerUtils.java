@@ -1,13 +1,11 @@
-
 package myapp.utilities;
 
 import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.testng.log4testng.Logger;
 
 public class LoggerUtils {
-
     //    This Util class is used to log info in Test classes
-    private static Logger logger = LogManager.getLogger(myapp.utilities.LoggerUtils.class.getName());
+    private static Logger logger = (Logger) LogManager.getLogger(LoggerUtils.class.getName());
     public static void debug(String message){
         logger.debug(message);
     }
